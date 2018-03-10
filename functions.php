@@ -67,7 +67,16 @@ echo $commentClass;
         <div class="comment-element" id="<?php $comments->theId(); ?>">
             <div class="comment-container">
                 <div class="comment-author-avatar">
-                    <a target="_blank" href="<?php echo $comments->url; ?>"><?php $comments->gravatar('55', ''); ?></a>
+                    <a target="_blank" href="<?php echo $comments->url; ?>"><?php
+                    $mail=$comments->mail;
+                    $mail = explode("@",$mail); 
+                    if($mail[1]=="qq.com"){
+                        echo '<img class="avatar" src="https://q2.qlogo.cn/headimg_dl? bs='.$mail[0].'&dst_uin='.$mail[0].'&spec=100&url_enc=0&referer=bu_interface&term_type=PC" width="55px" height="55px">';
+                    }else{
+                        //直接用原生头像函数获取
+                        $comments->gravatar('55', '');
+                    }
+                    ?></a>
                 </div>
                 <div class="comment-author-info">
                     <div class="comment-meta">

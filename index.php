@@ -4,7 +4,7 @@
  * 
  * @package Ero
  * @author Archeb
- * @version 1.1
+ * @version 1.1.1
  * @link https://qwq.moe
  */
 
